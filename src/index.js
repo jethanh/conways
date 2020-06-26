@@ -128,6 +128,12 @@ class Main extends React.Component {
       for (let j = 0; j < this.cols; j++){
         if (Math.floor(Math.random() * 4) === 1) {
           gridCopy[i][j] = true;
+        } 
+
+        if (gridCopy[i][j] = true) {
+          if (Math.floor(Math.random() * 2) === 1) {
+            gridCopy[i][j] = false;
+          } 
         }
       }
     }
