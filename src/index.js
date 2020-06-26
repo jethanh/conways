@@ -22,7 +22,7 @@ class Box extends React.Component {
 
 class Grid extends React.Component {
 	render() {
-		const width = (this.props.cols * 14);
+		const width = (this.props.cols * 19);
 		var rowsArr = [];
 
 		var boxClass = "";
@@ -138,7 +138,8 @@ class Main extends React.Component {
       }
     }
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     })
   }
 
@@ -175,6 +176,11 @@ class Main extends React.Component {
       gridFull: grid,
       generation: 0
     });
+
+    clearInterval(this.intervalId)
+    this.setState({
+      running: false
+    })
   }
 
   gridSize = (size) => {
